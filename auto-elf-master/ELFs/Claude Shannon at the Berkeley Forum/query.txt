@@ -1,0 +1,54 @@
+# Query Information
+
+## Event Information
+
+Title: Claude Shannon at the Berkeley Forum
+Event Type: single
+Day: Thursday
+Time: 5:00 PM
+Members Excluded: John Backus
+Jobs Excluded: 
+
+## Sampling Information
+
+Schedule Sample Size: 10000
+
+0 samples had inoccupiable shifts and were excluded.
+
+Statistics for number of members in 10000 non-excluded sample ELFs:
+
+Minimum: 18
+Maximum: 20
+Median: 19.0
+Mean: 19.4388
+Mode: 20
+Standard Deviation: 0.602404223993249
+Variance: 0.3628908490849085
+
+18 = |*****
+19 = |********************************************
+20 = |*************************************************
+
+## Assignments
+
+ -- Ada Lovelace for Photographer at 5:30 PM - 6:00 PM.
+ -- Alan Perlis for Late Registration Check In + Cage Transport at 5:30 PM - 6:30 PM.
+ -- Anita Borg for Photographer at 6:00 PM - 6:30 PM.
+ -- Annie Easley for Registration Usher + Late Registration Check In at 4:30 PM - 5:30 PM.
+ -- Barbara Liskov for Utility at 5:00 PM - 6:00 PM.
+ -- Betty Holberton for Utility at 4:30 PM - 5:00 PM.
+ -- Dennis Ritchie for Cage Transport + Registration Set Up at 3:30 PM - 4:30 PM.
+ -- Edsger Dijkstra for Tech Oversight/Set Up at 6:00 PM - 6:30 PM.
+ -- Frances Allen for Utility at 6:00 PM - 6:30 PM.
+ -- Jeannette Wing for Photographer at 4:30 PM - 5:30 PM.
+ -- Karen Jones for Registration Check In at 4:30 PM - 5:00 PM.
+ -- Larry Page for Cage Transport at 6:00 PM - 6:30 PM.
+ -- Leslie Lamport for Cage Oversight + Stage Set Up at 3:30 PM - 4:30 PM.
+ -- Sergey Brin for Tech Oversight/Set Up at 4:00 PM - 5:00 PM.
+ -- Sophie Wilson for Cage Transport + Stage Set Up at 3:30 PM - 4:30 PM.
+ -- Tim Berners-Lee for Cage Oversight at 6:00 PM - 6:30 PM.
+ -- Wendy Hall for Registration Check In at 4:30 PM - 5:00 PM.
+ -- Winifred Asprey for Social Media at 5:00 PM - 6:00 PM.
+ -- Yukihiro Matsumoto for Tech Oversight/Set Up at 5:00 PM - 6:00 PM.
+
+Schedule generated successfully. The ELF's location is `ELFs/Claude Shannon at the Berkeley Forum/ELF.csv`.

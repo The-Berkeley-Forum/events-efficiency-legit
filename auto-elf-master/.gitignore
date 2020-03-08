@@ -1,0 +1,5 @@
+# Compiled Files
+__pycache__/
+
+# API Files
+*.dat
