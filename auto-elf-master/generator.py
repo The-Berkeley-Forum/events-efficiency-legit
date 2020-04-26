@@ -8,6 +8,9 @@ from os import path, mkdir
 from copy import deepcopy
 import statistics as stat
 import sys
+from tempfile import NamedTemporaryFile
+import shutil
+import csv
 
 def generate():
 	unusable_chars = ["#", "%", "&", "{", "}", "\\", "<", ">",
@@ -279,6 +282,31 @@ def generate():
 			elf.setWrittenSchedule(low_elfs[randint(0,len(low_elfs)-1)])
 			return elf
 
+	def update_csv(elf):
+		names = {}
+		for row in [x[1] for x in elf.getWrittenSchedule()]:
+			for item in row:
+				if item != "BLANK":
+					if item in names:
+						names[item] += 1
+					else:
+						names[item] = 1
+
+		filename = 'schedules/info.csv'
+		tempfile = NamedTemporaryFile(mode='w', delete=False)
+
+		fields = ['Name', 'Email', 'Num_Hours']
+
+		with open(filename, 'r') as csvfile, tempfile:
+		    reader = csv.DictReader(csvfile, fieldnames=fields)
+		    writer = csv.DictWriter(tempfile, fieldnames=fields)
+		    for row in reader:
+		        if row['Name'] in names:
+		            row['Num_Hours'] = float(row['Num_Hours']) + (0.5 * names[row['Name']])
+		        row = {'Name': row['Name'], 'Email': row['Email'], 'Num_Hours': row['Num_Hours']}
+		        writer.writerow(row)
+
+		shutil.move(tempfile.name, filename)
 
 	iter_input = input("\nHow many sample schedules should be created to find the optimal schedule? (recommended: 10000)\n>>> ")
 
@@ -297,6 +325,7 @@ def generate():
 		iter_input = input("\nHow many iterations should be run to find the optimal schedule? (defaults to 10000)\n>>> ")
 
 	elf = findOptimalELF(int(iter_input))
+	update_csv(elf)
 
 	if event_type == "single":
 		elf.setWrittenSchedule(single_inverse(elf.getWrittenSchedule()))
