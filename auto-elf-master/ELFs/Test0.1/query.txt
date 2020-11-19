@@ -1,0 +1,42 @@
+# Query Information
+
+## Event Information
+
+Title: Test0.1
+Event Type: single
+Day: Monday
+Time: 8:00 PM
+Members Excluded: None
+Jobs Excluded: 
+
+## Sampling Information
+
+Schedule Sample Size: 10000
+
+10000 samples had inoccupiable shifts and were excluded.
+
+Statistics for number of unoccupied shifts in 10000 excluded sample ELFs:
+
+Minimum: 4
+Maximum: 4
+Median: 4.0
+Mean: 4
+Mode: 4
+
+
+4 = |**********
+
+## Assignments
+
+ -- Alan Turing for Utility at 8:00 PM - 9:00 PM.
+ -- Alonzo Church for Late Registration Check In at 8:00 PM - 9:00 PM.
+ -- Barbara Liskov for Cage Transport + Registration Set Up at 6:30 PM - 7:30 PM.
+ -- John Backus for Tech Oversight/Set Up at 7:00 PM - 8:00 PM.
+ -- John von Neumann for Photographer at 8:00 PM - 9:00 PM.
+ -- Sophie Wilson for Cage Oversight + Stage Set Up at 6:30 PM - 7:30 PM.
+ -- Susan Landau for Cage Transport at 6:30 PM - 7:00 PM.
+ -- Vinod Khosla for Tech Oversight/Set Up at 8:00 PM - 9:00 PM.
+ -- Wendy Hall for Registration Check In at 7:00 PM - 8:00 PM.
+ -- Winifred Asprey for Tech Oversight/Set Up at 7:00 PM - 8:00 PM.
+
+Schedule generated successfully. The ELF's location is `ELFs/Test0.1/ELF.csv`.

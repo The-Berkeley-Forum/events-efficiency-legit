@@ -1,0 +1,43 @@
+# Query Information
+
+## Event Information
+
+Title: Test0
+Event Type: single
+Day: Monday
+Time: 8:00 PM
+Members Excluded: None
+Jobs Excluded: 
+
+## Sampling Information
+
+Schedule Sample Size: 10000
+
+10000 samples had inoccupiable shifts and were excluded.
+
+Statistics for number of unoccupied shifts in 10000 excluded sample ELFs:
+
+Minimum: 4
+Maximum: 4
+Median: 4.0
+Mean: 4
+Mode: 4
+
+
+4 = |**********
+
+## Assignments
+
+ -- Adele Goldberg for Tech Oversight/Set Up at 7:00 PM - 7:30 PM.
+ -- Adi Shamir for Cage Oversight + Stage Set Up at 6:30 PM - 7:30 PM.
+ -- Alan Kay for Tech Oversight/Set Up at 7:00 PM - 8:00 PM.
+ -- Annie Easley for Photographer at 8:00 PM - 9:00 PM.
+ -- Dennis Ritchie for Tech Oversight/Set Up at 8:00 PM - 9:00 PM.
+ -- Edgar Codd for Utility at 8:30 PM - 9:00 PM.
+ -- Edsger Dijkstra for Cage Transport + Registration Check In at 6:30 PM - 7:30 PM.
+ -- Jean Bartik for Late Registration Check In at 8:30 PM - 9:00 PM.
+ -- Maria Klawe for Registration Check In + Late Registration Check In at 7:30 PM - 8:30 PM.
+ -- Sergey Brin for Cage Transport + Registration Set Up at 6:30 PM - 7:30 PM.
+ -- Steve Wozniak for Tech Oversight/Set Up + Utility at 7:30 PM - 8:30 PM.
+
+Schedule generated successfully. The ELF's location is `ELFs/Test0/ELF.csv`.
