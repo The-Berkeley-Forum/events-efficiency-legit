@@ -26,8 +26,8 @@ while True:
 	if menu_choice == "1":
 		os.system("cls" if os.name == "nt" else "clear")
 		print("\n* 1 -> Generate an event logistics form.")
-		from generator import generate
-		generate()
+		from generator import main
+		main()
 		input("Press enter to go back to the menu\n>>> ")
 		os.system("cls" if os.name == "nt" else "clear")
 	elif menu_choice == "2":
