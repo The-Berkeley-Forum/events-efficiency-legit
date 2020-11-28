@@ -11,13 +11,152 @@ import sys
 from tempfile import NamedTemporaryFile
 import shutil
 import csv
+from tkinter import *
+from PIL import ImageTk, Image # Used for resizing the image
+import argparse
+from tkinter import messagebox
+
+def main():
+    def close(frame):
+        window.withdraw() # if you want to bring it back
+        sys.exit() # if you want to exit the entire thing
+    
+    # Adding a blank div
+    def add_div(row_num, col_num=0):
+        Label (window, text="___", bg="#1e374a", fg="#1e374a", font="Arial 3", justify=LEFT).grid(row=row_num, column=col_num, sticky=SW)
+
+    # Adding a text entry box
+    # def add_entry(row_num, col_num=1):
+    # textentry = Entry(window, width=25, bg='white', font="Arial 6")
+    # textentry.grid(row=row_num, column=col_num, padx=10)
+
+    # Window setup
+    window = Tk()
+    window.title("Events Logistics Generator")
+    window.configure(bg='#1e374a')
+    window.geometry("800x740")
+    window.tk.call('tk', 'scaling', 3)
+    window.bind('<Escape>', close)
+    # window.wm_attributes('-transparentcolor', 'grey') #window['bg'] #Transparent background...
+
+    # ESC to Quit label
+    Label (window, text="Press ESC to quit", bg="#1e374a", fg="white", font="Helvetica 10", justify=RIGHT).grid(row=0, column=4, pady=10, sticky=NE)
+
+    # Title
+    Label (window, text="Events Logistics Generator", bg="#1e374a", fg="white", font="Arial 14", justify=RIGHT).grid(row=0, column=1)
+
+
+    # TBF Logo
+    logoimg = Image.open('img/Berkeley_Forum_logo.png')
+    logoimg = logoimg.resize((200, 200), Image.ANTIALIAS)
+    logophoto = ImageTk.PhotoImage(logoimg)
+
+    Label (window, image=logophoto, bg='#1e374a') .grid(row=0, column=0, sticky=W)
+
+    # Adding text
+    # Title
+    Label (window, text="What is the title of the event? [REQUIRED]", bg="#1e374a", fg="white", font="Arial 12", justify=LEFT).grid(row=1, column=0, padx=10, sticky=SW)
+    #add_entry(1)
+    e = Entry(window, width=25, bg='white', font="Arial 12")
+    e.grid(row = 1, column = 1, padx = 10)
+
+    text = Label (window, text="format: Alan Turing at the Berkeley Forum", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=2, column=0, padx=10, sticky=NW)
+
+    
+    add_div(3)
+
+    # Type
+    Label (window, text="What type of event is it? [REQUIRED]", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=4, column=0, padx=10, sticky=SW)
+    t = Entry(window, width=25, bg='white', font="Arial 12")
+    t.grid(row = 4, column = 1, padx = 10)
+
+    text = Label (window, text="format: single, multi", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=5, column=0, padx=10, sticky=NW)
+
+    add_div(6)
+
+    # Day
+    Label (window, text="What is the day of the event? [REQUIRED]", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=7, column=0, padx=10, sticky=SW)
+    d = Entry(window, width=25, bg='white', font="Arial 12")
+    d.grid(row = 7, column = 1, padx = 10)
+    #add_entry(7)
+
+    text = Label (window, text="format: Monday, Tuesday, etc.", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=8, column=0, padx=10, sticky=NW)
+
+    add_div(9)
+
+    # Time
+    Label (window, text="What is the time of the event? [REQUIRED]", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=10, column=0, padx=10, sticky=SW)
+    ti = Entry(window, width=25, bg='white', font="Arial 12")
+    ti.grid(row = 10, column = 1, padx = 10)
+    #add_entry(10)
+
+    text = Label (window, text="format: 5:00 PM, 6:30 PM, etc.", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=11, column=0, padx=10, sticky=NW)
+
+    add_div(12)
+    
+    # Member Exlusions
+    Label (window, text="Are there any member exclusions?", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=13, column=0, padx=10, sticky=SW)
+    mem = Entry(window, width=25, bg='white', font="Arial 12")
+    mem.grid(row = 13, column = 1, padx = 10)
+    #add_entry(13)
+
+    text = Label (window, text="format: Alan Turing, Grace Hopper, etc.", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=14, column=0, padx=10, sticky=NW)
+
+    add_div(15)
+
+    # Job Exlusions
+    Label (window, text="Are there any job exclusions?", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=16, column=0, padx=10, sticky=SW)
+    job = Entry(window, width=25, bg='white', font="Arial 12")
+    job.grid(row = 16, column = 1, padx = 10)
+
+    text = Label (window, text="format: Tech Oversight/Set Up, Photographer, etc.", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=17, column=0, padx=10, sticky=NW)
+
+    add_div(18)
+
+    # Number of Schedules to be generated
+    Label (window, text="Number of sample schedules created? [REQUIRED]", bg = "#1e374a", fg="white", font="Arial 12", justify=LEFT) .grid(row=19, column=0, padx=10, sticky=SW)
+    sched = Entry(window, width=25, bg='white', font="Arial 12")
+    sched.grid(row = 19, column = 1, padx = 10)
+
+    text = Label (window, text="recommended: 10000", bg="#1e374a", fg="white", font = "Arial 10 italic", justify=LEFT)
+    text.grid(row=20, column=0, padx=10, sticky=NW)
+
+    add_div(21,2)
+
+    def save():
+        event = e.get()
+        eventType = t.get()
+        day = d.get()
+        time = ti.get()
+        memExc = mem.get()
+        jobExc = job.get()
+        schedExc = sched.get()
+        global params
+        params = [event, eventType, day, time, memExc, jobExc, schedExc]
+
+    def saveAndGenerate():
+        save()
+        generate()
+
+    # submit button
+    Button(window, text="GENERATE!", width=10, padx=10, font="Arial 12", command=saveAndGenerate) .grid(row=22, column=4, sticky=E)
+
+    # run the main loop
+    window.mainloop()
 
 def generate():
 	unusable_chars = ["#", "%", "&", "{", "}", "\\", "<", ">",
 					  "*", "?", "/", "$", "!", "'", "\"", ":",
 					  "@", "+", "`", "|", "="]
 
-	title = input("\nWhat is the title of the event? (format: Alan Turing at the Berkeley Forum)\n>>> ")
+	#title = input("\nWhat is the title of the event? (format: Alan Turing at the Berkeley Forum)\n>>> ")
+	title = params[0]
 
 	def charCheck(new_title):
 		for character in unusable_chars:
@@ -27,29 +166,30 @@ def generate():
 
 	while not charCheck(title):
 		print("\nPlease enter a title without the following characters: " + ", ".join(unusable_chars) + ".\n")
-		title = input("What is the title of the event? (format: Alan Turing at the Berkeley Forum)\n>>> " )
+		#title = input("What is the title of the event? (format: Alan Turing at the Berkeley Forum)\n>>> " )
+		title = params[0]
 
-	event_type = input("\nWhat type of event is it? (format: single, multi)\n>>> ")
+	event_type = params[1]
 
 	while event_type not in ["single", "multi"]:
 		print("\nPlease enter a valid event type.\n")
-		event_type = input("What type of event is it? (format: single, multi)\n>>> ")
+		event_type = params[1]
 
 	default_schedule = (single_transform if event_type == "single" else multiple_transform)
 
-	day = input("\nWhat is the day of the event? (format: Monday, Tuesday, etc.)\n>>> ")
+	day = params[2]
 	valid_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 	while day not in valid_days:
 		print("\nPlease enter a valid day.\n")
-		day = input("What is the day of the event? (format: Monday, Tuesday, etc.)\n>>> ")
+		day = params[2]
 
 	hour = 0
 	minute = 0
 	meridian = "XM"
 
 	while minute not in [0, 30] or meridian not in ["AM", "PM"] or (hour < 1 or hour > 12):
-		time = input("\nWhat is the time of the event? (format: 5:00 PM, 6:30 PM, etc.)\n>>> ")
+		time = params[3]
 		meridian_split = time.split(" ")
 		if len(meridian_split) != 2:
 			print("\nPlease enter a valid time in 12 hour notation that is a multiple of 30 minutes.")
@@ -83,7 +223,7 @@ def generate():
 
 	excluded = []
 
-	excluded_prompt = input("\nAre there any member exclusions? (format: Alan Turing, Grace Hopper, etc.)\n>>> ")
+	excluded_prompt = params[4]
 
 	if excluded_prompt != "":
 		excluded_names = excluded_prompt.split(",")
@@ -92,7 +232,7 @@ def generate():
 
 	excluded_jobs = []
 
-	excluded_jobs_prompt = input("\nAre there any job exclusions? (format: Tech Oversight/Set Up, Photographer, etc.)\n>>> ")
+	excluded_jobs_prompt = params[5]
 
 	if excluded_jobs_prompt != "":
 		excluded_jobs = excluded_jobs_prompt.split(",")
@@ -308,7 +448,7 @@ def generate():
 
 		shutil.move(tempfile.name, filename)
 
-	iter_input = input("\nHow many sample schedules should be created to find the optimal schedule? (recommended: 10000)\n>>> ")
+	iter_input = params[6]
 
 	text_out.append("## Sampling Information\n\n")
 	text_out.append("Schedule Sample Size: " + str(iter_input) + "\n")
@@ -322,7 +462,7 @@ def generate():
 
 	while int(iter_input) < 1 and not numCheck(iter_input):
 		print("\nPlease enter a nonzero number.\n")
-		iter_input = input("\nHow many iterations should be run to find the optimal schedule? (defaults to 10000)\n>>> ")
+		iter_input = params[6]
 
 	elf = findOptimalELF(int(iter_input))
 	update_csv(elf)
@@ -428,3 +568,6 @@ def generate():
 	dir_name = writeFile()
 	writeTable(dir_name)
 	writeQueryInfo()
+
+if __name__ == "__main__":
+    main()
