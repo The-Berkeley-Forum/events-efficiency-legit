@@ -1,0 +1,51 @@
+# Query Information
+
+## Event Information
+
+Title: Anhtu at Berkeley Forum
+Event Type: single
+Day: Monday
+Time: 5:00 PM
+Members Excluded: None
+Jobs Excluded: 
+
+## Sampling Information
+
+Schedule Sample Size: 10000
+
+0 samples had inoccupiable shifts and were excluded.
+
+Statistics for number of members in 10000 non-excluded sample ELFs:
+
+Minimum: 14
+Maximum: 17
+Median: 16.0
+Mean: 15.7594
+Mode: 16
+Standard Deviation: 0.5595917746852874
+Variance: 0.31314295429542954
+
+14 = |*
+15 = |*************************
+16 = |*******************************************************************
+17 = |****
+
+## Assignments
+
+ -- Ada Lovelace for Cage Oversight at 6:00 PM - 6:30 PM.
+ -- Alan Perlis for Utility at 5:00 PM - 6:00 PM.
+ -- Bill Joy for Cage Transport at 3:30 PM - 4:00 PM.
+ -- Brian Kernighan for Cage Oversight at 3:30 PM - 4:00 PM.
+ -- Daphne Koller for Tech Oversight/Set Up at 5:00 PM - 6:00 PM.
+ -- Edgar Codd for Stage Set Up at 4:00 PM - 4:30 PM.
+ -- Grace Hopper for Photographer at 5:00 PM - 6:00 PM.
+ -- Jeannette Wing for Registration Check In at 4:00 PM - 5:00 PM.
+ -- Karen Jones for Cage Transport at 3:30 PM - 4:00 PM.
+ -- Marissa Mayer for Cage Transport at 6:00 PM - 6:30 PM.
+ -- Rosalind Picard for Tech Oversight/Set Up at 4:00 PM - 5:00 PM.
+ -- Sergey Brin for Cage Transport at 6:00 PM - 6:30 PM.
+ -- Stephen Cook for Tech Oversight/Set Up at 4:00 PM - 5:00 PM.
+ -- Susan Landau for Registration Set Up at 4:00 PM - 4:30 PM.
+ -- Wendy Hall for Late Registration Check In at 5:00 PM - 6:00 PM.
+
+Schedule generated successfully. The ELF's location is `ELFs/Anhtu at Berkeley Forum/ELF.csv`.
